@@ -14,7 +14,7 @@
  {
       width: auto;
       height: 100px;
-      background-color:grey;
+      background-color:#ebebeb;
   }
 
 .container
@@ -29,7 +29,7 @@
  {
       width: 200px;
       height: 100px;
-      background-image: url("image.jpg");
+      background-image: url<%= link_to image_tag('image.jpg')%>;
       float: left;
   }
 #navArea
@@ -70,6 +70,7 @@
   {
     background-color: 000;
     padding-left: 120px;
+    text-align: center;
   }
     #sidebar
     {
@@ -81,10 +82,11 @@
     .sidenav
     {
       color: black;
-      background-color: white;
+      background-color: grey;
       width: 150px;
       height: 100%;
       float: left;
+      font-family: arial;
     }
     #sidebar1
     {
@@ -96,16 +98,17 @@
     .sidenav1
     {
       color: black;
-      background-color: white;
+      background-color: ;
       width: 150px;
       height: auto;
-      float: right;
+      text-align: left;
+      font-family: courier;
     }
   #footer
-  {
-      background-color: grey;
-      width: auto;
-      color: white;
+   {
+      background-color: #ebebeb;
+      width: 500;
+      color: black;
       background-color: 000;
       padding-bottom: 20px;
       padding: 14opx;
@@ -114,9 +117,23 @@
     }
     #p
     {
-     margin: 10px;
+      margin: 10px;
     }
-
+    #cont
+    {
+       list-style: none;
+    }
+    #cont a
+    {
+      text-decoration: none;
+      text-align: center;
+      font-family: courier;
+    }
+    #cont li
+    {
+      text-decoration: none;
+      color: gold;
+    }
 </style>
 </head>
 <body>
@@ -125,13 +142,9 @@
      <div id = "logoArea"></div>
      <div id = "navArea">
      <ul id = "nav">
-      <a>
-
-
-         <li><%= link_to 'aboutpage', aboutpage_path %></li>
+      <a><li><%= link_to 'aboutpage', aboutpage_path %></li>
         <li><%= link_to 'homepage', root_path %></li>
-      </a>
-
+       </a>
     </ul>
     </div>
     </div>
@@ -139,14 +152,13 @@
       <div id = "sidebar">
         <div class = "sidenav">
            <ul id = "cont">
-             <h3>click the links</h3>
-      <a>
-         <li><%= link_to 'news', aboutpage_path %></li>
-         <li><%= link_to 'options', root_path %></li>
-      </a>
+             </a>
+             <h3>features</h3>
+         <li><%= link_to 'home', root_path %></li>
+         <li><%= link_to 'home', root_path %></li>
+          </ul>
 
-           </ul>
-          <p style="color:red"><h3> this is an error.</h3>
+          <p><h5> click the links to refresh page.</h3>
           <h5> these links don't work becouse I didn't set the roots, sorry about the delays.</h5>
           </p>
         <p><h3>click the links</h3>
@@ -157,10 +169,10 @@
       <div id = "sidebar1">
        <div class = "sidenav1">
         <ul id = "cont">
-          <h3>to find out more about my coding click the following links.
+          <h5>click one the following links to go to about page.</h5>
           <a>
-             <li><%= link_to 'about2', aboutpage_path %></li>
-             <li><%= link_to 'home2', root_path %></li>
+             <li><%= link_to 'link', aboutpage_path %></li>
+             <li><%= link_to 'link', aboutpage_path %></li>
           </a>
         </ul>
           <p><h4>click the links</h4>
@@ -177,7 +189,7 @@
 
           <h1>Welcome to Alpha Blog</h1>
 
-<%= link_to image_tag('image.jpg'), '/html/homepage'%>
+<%= link_to image_tag('image.jpg'),'http://rails-app-207524.nitrousapp.com/'%>
         <p><h4> I am not the author of this picture.</h4>
 <h5>This is my test app and I want to change as I go along in the course. There will be more people visiting this site daily and we are working on an improvement so that our users ccan feel the new danamic way we build it.</h5>
         </p>
@@ -190,7 +202,7 @@
     <div id = "footer">
       <div class = "cont">
         <p>
-        <h1>policy and terms</h1>
+        <h1><strong>policy </strong></h1>
         <h6> users are advised not to publish article from this website, failiture to comply our terms and conditions will result further access diniel.</h6></p>
 </div>
 
